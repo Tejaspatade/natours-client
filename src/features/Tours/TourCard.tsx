@@ -28,15 +28,15 @@ const TourCard = ({ tour }: CardProps) => {
 				</h4>
 				<p className="card__text">{tour.summary}</p>
 				<div className="card__data">
-					{/* <svg className="card__icon">
-								<use xlink:href="img/icons.svg#icon-map-pin"></use>
-							</svg> */}
+					<svg className="card__icon">
+						<use xlinkHref="icons.svg#icon-map-pin" />
+					</svg>
 					<span>{tour.startLocation.description}</span>
 				</div>
 				<div className="card__data">
-					{/* <svg className="card__icon">
-								<use xlink:href="img/icons.svg#icon-calendar"></use>
-							</svg> */}
+					<svg className="card__icon">
+						<use xlinkHref="icons.svg#icon-calendar"></use>
+					</svg>
 					<span>
 						{new Intl.DateTimeFormat("en-US", {
 							year: "numeric",
@@ -45,15 +45,15 @@ const TourCard = ({ tour }: CardProps) => {
 					</span>
 				</div>
 				<div className="card__data">
-					{/* <svg className="card__icon">
-								<use xlink:href="img/icons.svg#icon-flag"></use>
-							</svg> */}
+					<svg className="card__icon">
+						<use xlinkHref="icons.svg#icon-flag"></use>
+					</svg>
 					<span>{tour.locations.length} stops</span>
 				</div>
 				<div className="card__data">
-					{/* <svg className="card__icon">
-								<use xlink:href="img/icons.svg#icon-user"></use>
-							</svg> */}
+					<svg className="card__icon">
+						<use xlinkHref="icons.svg#icon-user"></use>
+					</svg>
 					<span>{tour.maxGroupSize} people</span>
 				</div>
 			</div>
@@ -61,16 +61,18 @@ const TourCard = ({ tour }: CardProps) => {
 			<div className="card__footer">
 				<p>
 					<span className="card__footer-value">${tour.price}</span>
-					<span className="card__footer-text">per person</span>
+					<span className="card__footer-text"> per person</span>
 				</p>
 				<p className="card__ratings">
 					<span className="card__footer-value">
 						{tour.ratingsAverage}
 					</span>
 					<span className="card__footer-text">
+						{" "}
 						rating ({tour.ratingsQuantity})
 					</span>
 				</p>
+				{/* ---------Need to use Router-DOM Link here */}
 				<a
 					href={`tour/${tour.slug}`}
 					className="btn btn--green btn--small"
