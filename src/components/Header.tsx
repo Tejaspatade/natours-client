@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import { useAuth } from "../hooks/useAuth";
 
 const Header = () => {
+	const { isLoggedIn } = useAuth();
+
 	return (
 		<header className="header">
 			<nav className="nav nav--tours">
@@ -33,8 +37,17 @@ const Header = () => {
 					<span>Jonas</span>
 				</a> */}
 
-				<button className="nav__el">Log in</button>
-				<button className="nav__el nav__el--cta">Sign up</button>
+				{/* Check if user's logged in/not */}
+				{!isLoggedIn && (
+					<>
+						<Link to="login" className="nav__el">
+							Log in
+						</Link>
+						<Link to="signup" className="nav__el nav__el--cta">
+							Sign up
+						</Link>
+					</>
+				)}
 			</nav>
 		</header>
 	);

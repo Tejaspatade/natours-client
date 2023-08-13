@@ -22,7 +22,7 @@ const Tours = () => {
 	return (
 		<div className="card-container">
 			{tours?.map((tour: Tour) => (
-				<TourCard tour={tour} />
+				<TourCard tour={tour} key={tour._id} />
 			))}
 		</div>
 	);
