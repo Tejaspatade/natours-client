@@ -11,7 +11,7 @@ const Tours = () => {
 	// Fetching all tours as a side-effect of mounting the component
 	useEffect(() => {
 		axios
-			.get(`${import.meta.env.VITE_BACKEND_API_URL}tours`)
+			.get(`${import.meta.env.VITE_BACKEND_API_URL}api/v1/tours`)
 			.then((response) => {
 				// console.log(response.data.data.data);
 				setTours(response.data.data.data);

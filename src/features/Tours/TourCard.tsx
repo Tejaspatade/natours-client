@@ -11,7 +11,9 @@ const TourCard = ({ tour }: CardProps) => {
 				<div className="card__picture">
 					<div className="card__picture-overlay">&nbsp;</div>
 					<img
-						src="tour-1-cover.jpg"
+						src={`${import.meta.env.VITE_AWS_S3_BUCKET}/tours/${
+							tour.imageCover
+						}`}
 						alt={`${tour.name} image`}
 						className="card__picture-img"
 					/>

@@ -30,7 +30,7 @@ const Login = () => {
 		try {
 			// Send async request to backend & retrieve token
 			const response = await axios.post(
-				`${import.meta.env.VITE_BACKEND_API_URL}users/log-in`,
+				`${import.meta.env.VITE_BACKEND_API_URL}api/v1/users/log-in`,
 				{
 					email,
 					password,
@@ -38,7 +38,7 @@ const Login = () => {
 			);
 
 			// Dispatch logged in action to store in context
-			console.log(response.data.data.user, response.data.token);
+			// console.log(response.data.data.user, response.data.token);
 			dispatch({
 				type: "LOGIN_SUCCESS",
 				payload: {
