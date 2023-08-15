@@ -2,9 +2,7 @@ import { useAuth } from "../../hooks/useAuth";
 
 const User = () => {
 	// Consuming context from provider
-	const {
-		state: { user },
-	} = useAuth();
+	const { user } = useAuth();
 
 	return (
 		<>
@@ -14,7 +12,9 @@ const User = () => {
 			</a> */}
 			<a href="#" className="nav__el">
 				<img
-					src={user?.photo}
+					src={`${import.meta.env.VITE_AWS_S3_BUCKET}/users/${
+						user?.photo
+					}`}
 					alt={`${user?.name} photo`}
 					className="nav__user-img"
 				/>

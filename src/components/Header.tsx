@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
-
 import Logo from "./Logo";
 import User from "../features/User/UserNav";
 import { useAuth } from "../hooks/useAuth";
+import LoginSignup from "./LoginSignup";
 
 const Header = () => {
 	// Consuming context from provider
@@ -26,18 +25,7 @@ const Header = () => {
 
 			<nav className="nav nav--user">
 				{/* Check if user's logged in/not */}
-				{isLoggedIn ? (
-					<User />
-				) : (
-					<>
-						<Link to="login" className="nav__el">
-							Log in
-						</Link>
-						<Link to="signup" className="nav__el nav__el--cta">
-							Sign up
-						</Link>
-					</>
-				)}
+				{isLoggedIn ? <User /> : <LoginSignup />}
 			</nav>
 		</header>
 	);

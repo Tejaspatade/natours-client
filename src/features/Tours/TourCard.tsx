@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Tour } from "../../types/Tour.types";
 
 type CardProps = {
@@ -74,13 +75,13 @@ const TourCard = ({ tour }: CardProps) => {
 						rating ({tour.ratingsQuantity})
 					</span>
 				</p>
-				{/* ---------Need to use Router-DOM Link here */}
-				<a
-					href={`tour/${tour.slug}`}
+
+				<Link
+					to={`tour/${tour.slug}`}
 					className="btn btn--green btn--small"
 				>
 					Details
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

@@ -7,5 +7,5 @@ export const useAuth = () => {
   const { state, dispatch } = useContext(UserContext);
   const isLoggedIn = state.token !== ""
 
-  return { state, isLoggedIn, dispatch };
+  return { ...state, isLoggedIn, dispatch };
 };
