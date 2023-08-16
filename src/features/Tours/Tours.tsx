@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { Tour } from "../../types/Tour.types";
+import { TourCardTypes } from "../../types/Tour.types";
+
 import TourCard from "./TourCard";
 
 const Tours = () => {
 	// React State
-	const [tours, setTours] = useState<Tour[] | null>(null);
+	const [tours, setTours] = useState<TourCardTypes[] | null>(null);
 
 	// Fetching all tours as a side-effect of mounting the component
 	useEffect(() => {
@@ -21,7 +22,7 @@ const Tours = () => {
 
 	return (
 		<div className="card-container">
-			{tours?.map((tour: Tour) => (
+			{tours?.map((tour: TourCardTypes) => (
 				<TourCard tour={tour} key={tour._id} />
 			))}
 		</div>

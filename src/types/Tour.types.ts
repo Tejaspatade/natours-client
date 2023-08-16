@@ -1,6 +1,6 @@
 interface Location {
   type: string;
-  coordinates: number[];
+  coordinates: [number, number];
   _id: string;
   description: string;
   day: number;
@@ -14,11 +14,28 @@ interface Guide {
   photo: string;
 }
 
-export interface Tour {
+interface User {
+  _id: string;
+  name: string;
+  photo: string;
+}
+
+interface Review {
+  createdAt: string;
+  _id: string;
+  review: string;
+  rating: number;
+  user: User;
+  tour: string;
+  __v: number;
+  id: string;
+}
+
+export interface TourCardTypes {
   startLocation: {
     type: string;
     description: string;
-    coordinates: number[];
+    coordinates: [number, number];
     address: string;
   };
   ratingsAverage: number;
@@ -40,4 +57,10 @@ export interface Tour {
   slug: string;
   durationWeeks: number;
   id: string;
+}
+
+export interface TourInfo extends TourCardTypes {
+  __v: number;
+  reviews: Review[];
+
 }

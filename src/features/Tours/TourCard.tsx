@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Tour } from "../../types/Tour.types";
+import { TourCardTypes } from "../../types/Tour.types";
 
 type CardProps = {
-	tour: Tour;
+	tour: TourCardTypes;
 };
 
 const TourCard = ({ tour }: CardProps) => {
