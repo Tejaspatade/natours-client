@@ -1,6 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+
 import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
@@ -47,7 +49,10 @@ const Login = () => {
 				},
 			});
 
-			// Navigate back to homepages
+			// Setting jwt in Cookie
+			Cookies.set("jwt", response.data.token, { expires: 7 });
+
+			// Navigate back to homepage
 			navigate("/");
 		} catch (err) {
 			// Display Error occured during the request
