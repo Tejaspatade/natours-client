@@ -28,6 +28,7 @@ const Tour = () => {
 						withCredentials: true,
 					},
 				};
+
 				// Route= /tour/:slug
 				const response = await axios.get(
 					`${

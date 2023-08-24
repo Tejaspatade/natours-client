@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 import { useAuth } from "../../hooks/useAuth";
 
@@ -37,10 +37,10 @@ const Login = () => {
 					email,
 					password,
 				}
+				// { withCredentials: true }
 			);
 
 			// Dispatch logged in action to store in context
-			// console.log(response.data.data.user, response.data.token);
 			dispatch({
 				type: "LOGIN_SUCCESS",
 				payload: {
@@ -50,7 +50,7 @@ const Login = () => {
 			});
 
 			// Setting jwt in Cookie
-			Cookies.set("jwt", response.data.token, { expires: 7 });
+			// Cookies.set("jwt", response.data.token, { expires: 7 });
 
 			// Navigate back to homepage
 			navigate("/");
